@@ -2,12 +2,12 @@
   margin: 0px;
   padding: 0px;
 }
-.top{
+.top {
   position: sticky;
   top: 0px;
-  background-color: rgb(255, 255, 255); 
-  z-index: 1000; 
-  transition: background-color 0.3s; 
+  background-color: rgb(255, 255, 255);
+  z-index: 1000;
+  transition: background-color 0.3s;
 }
 img {
   cursor: pointer;
@@ -20,7 +20,6 @@ header {
   justify-content: space-between;
   background-color: black;
   color: white;
-  
 }
 header p {
   text-align: center;
@@ -52,32 +51,32 @@ header p {
   width: 30px;
 }
 nav {
-  
+  overflow-x: auto;
+  white-space: nowrap;
   padding: 5px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 20px;
+  display: flex;
+  gap: 7vw;
 }
 .options {
-  
   box-shadow: 0px 6px 9px 0px rgb(218, 218, 218);
 }
 .taskbar {
-  
   margin: 2px;
   padding: 3px 3px 3px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-span {
-  font-size: 17px;
+.options span {
+  font-size: 20px;
+  
 }
 .search {
   width: 25px;
   height: 25px;
 }
-a {
+nav a {
+  
   width: 12vw;
   height: 9vh;
   display: flex;
@@ -86,9 +85,10 @@ a {
   color: black;
   font-size: 20px;
   text-decoration: none;
+ 
 }
 a:hover {
-  width: 14vw;
+  width: 11vw;
   height: 8vh;
   background-color: rgb(227, 130, 73);
   border-radius: 10px;
@@ -115,7 +115,6 @@ a:active {
   justify-content: center;
   align-items: center;
   transition: border-bottom 0.3s ease;
-  
 }
 .items {
   margin: 20px 12px 8px;
@@ -130,8 +129,10 @@ a:active {
   gap: 8px;
 }
 .item1 {
-  padding: 2px;
+  padding: 6px;
+  padding-bottom: 10px;
   margin: 2px;
+  
   margin-bottom: 3px;
   border-bottom: 2px dashed rgb(226, 226, 226);
 }
@@ -195,5 +196,12 @@ button {
 
   a {
     font-size: 18px;
+  }
+  nav {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  nav a {
+    min-width: 100px; 
   }
 }
