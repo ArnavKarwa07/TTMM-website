@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Summary</title>
+    <style>
+        .order-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Order Summary</h1>
+    <div id="order-summary"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Fetch orders from the server
+            fetch('fetch_orders.php')
+                .then(response => response.json())
+                .then(orders => {
+                    const orderSummaryDiv = document.getElementById("order-summary");
+                    orders.forEach(order => {
+                        const orderDiv = document.createElement("div");
+                        orderDiv.classList.add("order-item");
+                        orderDiv.innerHTML = `
+                            <p><strong>Item:</strong> ${order.item_name}</p>
+                            <p><strong>Category:</strong> ${order.category}</p>
+                            <p><strong>Price:</strong> Rs. ${order.price}</p>
+                            <p><strong>Quantity:</strong> ${order.quantity}</p>
+                            <p><strong>Total Price:</strong> Rs. ${order.total_price}</p>
+                            <hr>
+                        `;
+                        orderSummaryDiv.appendChild(orderDiv);
+                    });
+                });
+        });
+    </script>
+</body>
+</html>
